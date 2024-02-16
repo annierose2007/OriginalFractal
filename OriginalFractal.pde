@@ -1,52 +1,41 @@
-int w = 300;
-float bingo = 0;
 public void setup() {
-  size (600, 600);
-  background(255);
+  background(200, 156, 196);
+  size(650, 650);
+  rectMode(CENTER);
+  frameRate(60);
 }
-
 public void draw() {
-  w+=2;
-  if (w>=1200) w = 600;
-  translate(300,300);
-  stroke(255);
-  snowglobe(w);
-}
+  noStroke();
+  Fractal(180, 330, 460, 45);
+  Fractal(190, 340, 460, 65);
+  Fractal(200, 350, 450, 75);
+  fill(0, 0, 255);
+  Fractal(210, 360, 460, 85);
+  Fractal(220, 370, 460, 95);
+  Fractal(230, 380, 460, 105);
+}      
 
-public void snowglobe(int w) {
-  bingo+=0.03;
-  if (bingo == 360) bingo = 0;
-  rotate(bingo);
-  fill (176,212,229);
-  arc (0,0,w+300,w+300,0,THIRD_PI);
-  arc (0,0,w+300,w+300,2*THIRD_PI,PI);
-  arc (0,0,w+300,w+300,PI+THIRD_PI,PI+2*THIRD_PI);
-  fill (245,198,207);
-  arc (0,0,w+300,w+300,THIRD_PI,2*THIRD_PI);
-  arc (0,0,w+300,w+300,PI,PI+THIRD_PI);
-  arc (0,0,w+300,w+300,PI+2*THIRD_PI,TWO_PI);
-  rotate(-bingo);
-  rotate(-bingo);
-  fill (240,237,162);
-  arc (0,0,w,w,0,THIRD_PI);
-  arc (0,0,w,w,2*THIRD_PI,PI);
-  arc (0,0,w,w,PI+THIRD_PI,PI+2*THIRD_PI);
-  fill (162,240,174);
-  arc (0,0,w,w,THIRD_PI,2*THIRD_PI);
-  arc (0,0,w,w,PI,PI+THIRD_PI);
-  arc (0,0,w,w,PI+2*THIRD_PI,TWO_PI);
-  rotate(bingo);
-  rotate(bingo);
-  fill (176,212,229);
-  arc (0,0,w-300,w-300,0,THIRD_PI);
-  arc (0,0,w-300,w-300,2*THIRD_PI,PI);
-  arc (0,0,w-300,w-300,PI+THIRD_PI,PI+2*THIRD_PI);
-  fill (245,198,207);
-  arc (0,0,w-300,w-300,THIRD_PI,2*THIRD_PI);
-  arc (0,0,w-300,w-300,PI,PI+THIRD_PI);
-  arc (0,0,w-300,w-300,PI+2*THIRD_PI,TWO_PI);
-  rotate(-bingo);
-  if (w >= 600) {
-    snowglobe(w-600);
+
+public void Fractal(int x, int y, int siz, int hey) {
+  noStroke();
+  fill(hey+170, hey+130, hey+170);
+  beginShape();
+  vertex(x, y-100);
+  vertex(x+33, y-33);
+  vertex(x+100, y-30);
+  vertex(x+45, y+15);
+  vertex(x+60, y+100);
+  vertex(x, y+40);
+  vertex(x-60, y+100);
+  vertex(x-45, y+15);
+  vertex(x-100, y-30);
+  vertex(x-33, y-33);
+  vertex(x, y-100);
+  endShape(CLOSE);
+  if (siz>25) {
+    Fractal(x-200, y, siz/2, hey);
+    Fractal(x+200, y, siz/2, hey);
+    Fractal(x-100, y+130, siz/2, hey);
+    Fractal(x+100, y-130, siz/2, hey);
   }
 }
