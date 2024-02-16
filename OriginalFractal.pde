@@ -3,7 +3,8 @@ public void setup()
 {
 	size(512, 512);
 	background(255);
-	fill(Math.random()*255);
+	fill((int)(Math.random()*255), (int)(Math.random()*255), (int)(Math.random()*255));
+    	stroke(0);
 	stroke(0);
 }
 
