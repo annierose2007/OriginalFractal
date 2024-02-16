@@ -3,8 +3,8 @@ public void setup()
 {
 	size(512, 512);
 	background(0);
-	fill(0, 0, 0, 0);
-	stroke(255);
+	fill(255);
+	stroke(0);
 }
 
 public void draw()
