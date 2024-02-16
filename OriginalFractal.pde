@@ -2,7 +2,7 @@
 public void setup()
 {
 	size(512, 512);
-	background(0);
+	background(255);
 	fill(255);
 	stroke(0);
 }
