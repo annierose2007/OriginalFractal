@@ -14,7 +14,6 @@ public void round(int x, int y, int rad, color currentColor) {
     ellipse(x, y, rad, rad);
 
     if (rad >= 32) {    
-        // Generate random colors for the child circles
         color childColor1 = color((int)(Math.random()*255), (int)(Math.random()*255), (int)(Math.random()*255));
         color childColor2 = color((int)(Math.random()*255), (int)(Math.random()*255), (int)(Math.random()*255));
         color childColor3 = color((int)(Math.random()*255), (int)(Math.random()*255), (int)(Math.random()*255));
